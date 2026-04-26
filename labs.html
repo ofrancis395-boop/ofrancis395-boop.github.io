@@ -1,1 +1,188 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Active Directory Lab Documentation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Active Directory Domain Services (AD DS) Lab</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="labs.html" class="active">Labs</a>
+    </nav>
+</header>
+
+<main>
+
+<section>
+    <h2>Overview</h2>
+    <p>
+        This page documents my hands-on Active Directory Domain Services (AD DS) lab, 
+        built on Windows Server and Windows 11. The goal of this project was to design 
+        and deploy a realistic enterprise environment, including domain creation, 
+        OU structure, user management, delegated permissions, and Group Policy verification.
+    </p>
+    <p>
+        Each step includes explanations and screenshots demonstrating the configuration process.
+        Image placeholders are included below — I will replace them with my actual screenshots.
+    </p>
+</section>
+
+<hr>
+
+<!-- STEP 1 -->
+<section>
+    <h2>Step 1 — Windows Server Installation</h2>
+    <p>
+        Installed Windows Server and prepared the environment for Active Directory Domain Services.
+    </p>
+
+    <img src="assets/images/REPLACE-WITH-SERVER-INSTALL.png" alt="Server installation screenshot">
+</section>
+
+<hr>
+
+<!-- STEP 2 -->
+<section>
+    <h2>Step 2 — Configure Static IP Address</h2>
+    <p>
+        Assigned a static IPv4 address to ensure stable DNS and domain communication.
+    </p>
+
+    <img src="assets/images/REPLACE-WITH-STATIC-IP.png" alt="Static IP configuration screenshot">
+</section>
+
+<hr>
+
+<!-- STEP 3 -->
+<section>
+    <h2>Step 3 — Install Active Directory Domain Services (AD DS)</h2>
+    <p>
+        Installed the AD DS role and promoted the server to a Domain Controller.
+    </p>
+
+    <img src="assets/images/REPLACE-WITH-ADDS-INSTALL.png" alt="AD DS installation screenshot">
+</section>
+
+<hr>
+
+<!-- STEP 4 -->
+<section>
+    <h2>Step 4 — DNS Configuration</h2>
+    <p>
+        Verified DNS installation and ensured the domain controller was authoritative for the new domain.
+    </p>
+
+    <img src="assets/images/REPLACE-WITH-DNS-CONFIG.png" alt="DNS configuration screenshot">
+</section>
+
+<hr>
+
+<!-- STEP 5 -->
+<section>
+    <h2>Step 5 — Create Delegated Domain Join Account</h2>
+    <p>
+        Created a limited-permission account with rights to join computers to the domain, following least-privilege best practices.
+    </p>
+
+    <img src="assets/images/REPLACE-WITH-DELEGATED-ACCOUNT.png" alt="Delegated permissions screenshot">
+</section>
+
+<hr>
+
+<!-- STEP 6 -->
+<section>
+    <h2>Step 6 — Join Windows 11 to the Domain</h2>
+    <p>
+        Joined the Windows 11 client to the domain using the delegated account.
+    </p>
+
+    <img src="assets/images/REPLACE-WITH-DOMAIN-JOIN.png" alt="Domain join confirmation screenshot">
+</section>
+
+<hr>
+
+<!-- STEP 7 -->
+<section>
+    <h2>Step 7 — Move Computer to Correct OU</h2>
+    <p>
+        Moved the Windows 11 computer object from the default <em>Computers</em> container 
+        into a dedicated <strong>Computers OU</strong> to support Group Policy application.
+    </p>
+
+    <img src="assets/images/REPLACE-WITH-COMPUTER-OU.png" alt="Computer OU screenshot">
+</section>
+
+<hr>
+
+<!-- STEP 8 -->
+<section>
+    <h2>Step 8 — Create First Real Domain User</h2>
+    <p>
+        Created a standard user account inside the <strong>Staff OU</strong> to simulate a real employee identity.
+    </p>
+
+    <img src="assets/images/REPLACE-WITH-USER-CREATION.png" alt="User creation screenshot">
+</section>
+
+<hr>
+
+<!-- STEP 9 -->
+<section>
+    <h2>Step 9 — Log Into Windows 11 as Domain User</h2>
+    <p>
+        Logged into the Windows 11 workstation using the new domain user account to verify authentication and profile creation.
+    </p>
+
+    <img src="assets/images/REPLACE-WITH-USER-LOGIN.png" alt="Domain user login screenshot">
+</section>
+
+<hr>
+
+<!-- STEP 10 -->
+<section>
+    <h2>Step 10 — Verify Group Policy Processing</h2>
+    <p>
+        Ran <code>gpupdate /force</code> and <code>gpresult /r</code> to confirm that Group Policy was applying correctly.
+    </p>
+
+    <img src="assets/images/REPLACE-WITH-GPRESULT.png" alt="gpresult screenshot">
+</section>
+
+<hr>
+
+<section>
+    <h2>Next Steps</h2>
+    <p>
+        The next phase of this project will expand into hybrid identity by connecting 
+        my on-premises AD DS environment to Microsoft Entra ID, enabling:
+    </p>
+
+    <ul>
+        <li>Hybrid Azure AD Join</li>
+        <li>Entra Connect Sync</li>
+        <li>Conditional Access</li>
+        <li>Intune device management</li>
+        <li>Cloud-based configuration profiles</li>
+    </ul>
+
+    <p>
+        These steps will be added to this page as I complete them.
+    </p>
+</section>
+
+</main>
+
+<footer>
+    <p>© 2026 Francis — Active Directory & Hybrid Identity Lab</p>
+</footer>
+
+</body>
+</html>
